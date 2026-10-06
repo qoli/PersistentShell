@@ -32,6 +32,10 @@ through a local MCP subprocess.
 
 ## Installation
 
+The package requires Swift 6.3 or newer through AnyLanguageModel 0.16. Apple
+deployment targets remain macOS 14 and iOS 17. Swift 6.3 and Linux are not newly
+verified by the SwiftChat 5ML-104 synchronization run on Xcode 27 / Swift 6.4.
+
 Add the package through Swift Package Manager:
 
 ```swift

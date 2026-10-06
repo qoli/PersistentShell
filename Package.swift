@@ -1,4 +1,4 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 6.3
 
 import PackageDescription
 
@@ -18,8 +18,7 @@ let package = Package(
     .package(url: "https://github.com/apple/swift-nio-ssh.git", from: "0.15.0"),
     .package(url: "https://github.com/apple/swift-nio.git", from: "2.81.0"),
     .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0"..<"5.0.0"),
-    // Newer releases require Swift tools 6.2. Keep the package resolvable by its declared
-    // Swift tools 6.1 minimum while NIO/JSONSchema still support these compatible lines.
+    // Preserve the currently verified NIO/JSONSchema dependency lines during the AML update.
     .package(url: "https://github.com/apple/swift-collections.git", "1.2.1"..<"1.3.0"),
     .package(url: "https://github.com/apple/swift-log.git", "1.10.1"..<"1.11.0"),
     .package(url: "https://github.com/qoli/AnyLanguageModel.git", branch: "main"),
@@ -58,7 +57,7 @@ let package = Package(
       name: "PersistentShellTests",
       dependencies: [
         "PersistentShell",
-        // Keep the Swift 6.1 compatibility constraints active in package test builds.
+        // Keep the pinned Logging/OrderedCollections products covered in package tests.
         .product(name: "Logging", package: "swift-log"),
         .product(name: "OrderedCollections", package: "swift-collections"),
       ]
